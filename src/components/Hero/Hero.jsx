@@ -52,7 +52,7 @@ const Hero = ({ doScroll }) => {
           <Button onClick={e => handlerSubmit(e, value)} radius='10' disabled={!value}><MdSearch/></Button>
         </HeroFormStyle>
       <HeroImgStyle>
-        <img src='/public/GokuFutbol.png' alt=''/>
+        <img src='/GokuFutbol.png' alt=''/>
       </HeroImgStyle>
     </HeroContainerStyle>
   );
