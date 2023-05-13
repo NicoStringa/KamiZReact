@@ -20,7 +20,7 @@ const PageNotFound = () => {
         </FoundTextStyle>
         <ErrorImgStyle>
         <img
-          src='/src/assets/Krillin.gif'
+          src='/Krillin.gif'
           alt=''
           className='error'
         />

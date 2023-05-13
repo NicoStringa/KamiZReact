@@ -17,7 +17,7 @@ const Congratulations = () => {
       <TextStyle>
         <ImgStyle>
         <img
-          src='/src/assets/Goku.png'
+          src='/Goku.png'
           alt=''
         />
         </ImgStyle>
