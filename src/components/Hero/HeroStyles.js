@@ -7,7 +7,7 @@ export const HeroContainerStyle = styled.div`
   flex-direction: column;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   border: 3px solid var(--rich);
-  background: url("/src/assets/bg1.png") no-repeat;
+  background: url("/bg1.png") no-repeat;
   background-size: cover;
   width: 100%;
   h1 {

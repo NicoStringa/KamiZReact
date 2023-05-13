@@ -23,7 +23,7 @@ function Navbar() {
       <ModalCart />      <div>
         <Link to='/'>
           <img
-            src='/src/assets/Kamizeta1.png'
+            src='/Kamizeta1.png'
             alt='Logo'
           />
         </Link>
