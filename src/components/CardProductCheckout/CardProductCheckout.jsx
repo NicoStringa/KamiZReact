@@ -13,30 +13,31 @@ import {
   QuantityContainerStyle,
 } from './CardProductCheckoutStyles';
 
-
 import { MdOutlinePlusOne } from 'react-icons/md';
 import { MdRemove } from 'react-icons/md';
-import { MdDelete } from 'react-icons/md'
+import { MdDelete } from 'react-icons/md';
 
-const CardProductCheckout = ({id, closeup, title, price, quantity}) => {
+const CardProductCheckout = ({ id, closeup, title, price, quantity }) => {
   const dispatch = useDispatch();
 
   return (
     <CardContainerStyle>
-      <img src={closeup} alt={title}/>
+      <img src={closeup} alt={title} />
       <CardInfoStyle>
         <ProductTitleStyle>{title}</ProductTitleStyle>
         <PriceStyle>{formatPrice(price)} Zeni</PriceStyle>
       </CardInfoStyle>
       <QuantityContainerStyle>
-      <Increase
-          bgColor='var(--keppel)'
+        <Increase
+          bgColor="var(--keppel)"
           onClick={() => dispatch(removeFromCart(id))}
         >
           {quantity === 1 ? <MdDelete /> : <MdRemove />}
         </Increase>
         <Count>{quantity}</Count>
-        <Increase onClick={() => dispatch(addToCart({id, closeup, title, price}))}>
+        <Increase
+          onClick={() => dispatch(addToCart({ id, closeup, title, price }))}
+        >
           <MdOutlinePlusOne />
         </Increase>
       </QuantityContainerStyle>

@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCategory } from '../../redux/categories/categoriesSlice';
 
 export const Categoria = ({ img, title, category }) => {
-  const selectedCategory = useSelector(state => state.categories.selectedCategory);
+  const selectedCategory = useSelector(
+    (state) => state.categories.selectedCategory
+  );
 
   const dispatch = useDispatch();
 
@@ -14,7 +16,7 @@ export const Categoria = ({ img, title, category }) => {
       selected={category === selectedCategory}
       onClick={() => dispatch(selectCategory(category))}
       whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.80 }}
+      whileTap={{ scale: 0.8 }}
     >
       <img src={img} alt={category} />
       <h2>{title}</h2>

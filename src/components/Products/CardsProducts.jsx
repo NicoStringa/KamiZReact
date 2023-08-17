@@ -1,8 +1,8 @@
 import Button from '../UI/Button/Button';
 import CardProduct from './CardProduct';
 
-import { ButtonContainerStyle } from '../../pages/Home/HomeStyles';
-import { ProductsContainer } from './CardsProductsStyles';
+import { LoadContainerStyle } from '../../pages/Home/HomeStyles';
+import { ProductsContainer, LoadBtnContainerStled } from './CardsProductsStyles';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { INITIAL_LIMIT } from '../../utils';
@@ -37,7 +37,8 @@ const CardsProducts = () => {
         )}
       </ProductsContainer>
       {!selectedCategory && (
-      <ButtonContainerStyle>
+      <LoadContainerStyle>
+        <LoadBtnContainerStled>
         <Button
           onClick={() => setLimit(prevLimit => prevLimit - 3)}
           secondary='true'
@@ -46,7 +47,8 @@ const CardsProducts = () => {
           <span><MdArrowCircleUp/></span>
         </Button>
         <Button onClick={() => setLimit(prevLimit => prevLimit + 3)} disabled={totalProducts <= limit}><MdArrowCircleDown/></Button>
-      </ButtonContainerStyle>
+        </LoadBtnContainerStled>
+      </LoadContainerStyle>
       )}
 
     </>

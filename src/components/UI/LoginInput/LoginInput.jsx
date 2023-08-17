@@ -1,12 +1,29 @@
 import React from 'react';
 
-import { InputContainerStyle, LoginInputStyle } from './LoginInputStyles';
+import {
+  ErrorMessageStyle,
+  InputContainerStyle,
+  LoginInputStyle,
+} from './LoginInputStyles';
+import { ErrorMessage, Field } from 'formik';
 
-const LoginInput = ({ type, placeholder }) => {
+const LoginInput = ({ type, placeholder, name }) => {
   return (
-    <InputContainerStyle>
-      <LoginInputStyle type={type} placeholder={placeholder} />
-    </InputContainerStyle>
+    <Field name={name}>
+      {({ field, form: { errors, touched } }) => (
+        <InputContainerStyle>
+          <LoginInputStyle
+            type={type}
+            placeholder={placeholder}
+            {...field}
+            isError={errors[field.name] && touched[field.name]}
+          />
+          <ErrorMessage name={field.name}>
+            {(message) => <ErrorMessageStyle>{message}</ErrorMessageStyle>}
+          </ErrorMessage>
+        </InputContainerStyle>
+      )}
+    </Field>
   );
 };
 

@@ -29,21 +29,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, toggleCartHidden } from '../../../redux/cart/cartSlice';
 
 const ModalCart = () => {
-  const { cartItems, shippingCost} = useSelector(state => state.cart);
+  const { cartItems, shippingCost } = useSelector((state) => state.cart);
 
-  const hiddenCart = useSelector(state => state.cart.hidden);
+  const hiddenCart = useSelector((state) => state.cart.hidden);
 
   const totalPrice = cartItems.reduce((acc, item) => {
     return (acc += item.price * item.quantity);
-  }, 0)
+  }, 0);
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(!hiddenCart) {
-      dispatch(toggleCartHidden())
+    if (!hiddenCart) {
+      dispatch(toggleCartHidden());
     }
   }, [dispatch]);
 
@@ -58,26 +58,26 @@ const ModalCart = () => {
       <AnimatePresence>
         {!hiddenCart && (
           <ContainerStyle
-            initial={{ translateX: 600 }}
+            initial={{ translateX: -600 }}
             animate={{ translateX: 0 }}
-            exit={{ translateX: 600 }}
-            transition={{ type: 'spring', damping: 27 }}
-            key='cart-modal'
+            exit={{ translateX: -600 }}
+            transition={{ duration: 0.5 }}
+            key="cart-user"
           >
             <CloseButtonContainerStyle>
               <CloseButtonStyle
                 whileTap={{ scale: 0.95 }}
-                whileHover={{ scale: 1.1}}
+                whileHover={{ scale: 1.1 }}
                 onClick={() => dispatch(toggleCartHidden())}
               >
-                <MdOutlineClose size='24px' />
+                <MdOutlineClose size="24px" />
               </CloseButtonStyle>
               <Increase
-                  onClick={() => dispatch(clearCart())}
-                  disabled={!cartItems.length}
-                >
-                  <MdDeleteForever />
-                </Increase>
+                onClick={() => dispatch(clearCart())}
+                disabled={!cartItems.length}
+              >
+                <MdDeleteForever />
+              </Increase>
             </CloseButtonContainerStyle>
 
             <MainContainerStyle>
@@ -87,12 +87,12 @@ const ModalCart = () => {
 
               <ProductsWrapperStyle>
                 {cartItems.length ? (
-                  cartItems.map(item => (
-                    
-                    <ModalCartCard key={item.id} {...item}/>
+                  cartItems.map((item) => (
+                    <ModalCartCard key={item.id} {...item} />
                   ))
-                ) : (<p>The cart is empty</p>)}
-                
+                ) : (
+                  <p>The cart is empty</p>
+                )}
               </ProductsWrapperStyle>
             </MainContainerStyle>
 
@@ -108,15 +108,18 @@ const ModalCart = () => {
               <hr />
               <TotalStyle>
                 <p>Total:</p>
-                <PriceStyle>{formatPrice(totalPrice + shippingCost)} Zeni</PriceStyle>
+                <PriceStyle>
+                  {formatPrice(totalPrice + shippingCost)} Zeni
+                </PriceStyle>
               </TotalStyle>
               <ButtonContainerStyle>
-                <Submit onClick={() =>{
-                  navigate('/checkout')
-                  dispatch(toggleCartHidden())
+                <Submit
+                  onClick={() => {
+                    navigate('/checkout');
+                    dispatch(toggleCartHidden());
                   }}
                   disabled={!cartItems.length}
-                  >
+                >
                   Buy
                 </Submit>
               </ButtonContainerStyle>

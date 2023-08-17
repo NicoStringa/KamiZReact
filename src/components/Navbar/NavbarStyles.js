@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { motion } from "framer-motion";
+import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const NavbarContainerStyle = styled.div`
   height: 100px;
@@ -7,11 +7,8 @@ export const NavbarContainerStyle = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.75);
   position: sticky;
   top: 0%;

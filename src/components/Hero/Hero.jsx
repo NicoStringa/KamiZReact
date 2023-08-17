@@ -8,6 +8,7 @@ import {
   HeroFormStyle,
   HeroSearchBarStyle,
   HeroImgStyle,
+  HeroBtnContainerStyled,
 } from './HeroStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCategory } from '../../redux/categories/categoriesSlice';
@@ -49,7 +50,9 @@ const Hero = ({ doScroll }) => {
             type='text'
             placeholder='e.g. EPL'
           />
+          <HeroBtnContainerStyled>
           <Button onClick={e => handlerSubmit(e, value)} radius='10' disabled={!value}><MdSearch/></Button>
+          </HeroBtnContainerStyled>
         </HeroFormStyle>
       <HeroImgStyle>
         <img src='/GokuFutbol.png' alt=''/>

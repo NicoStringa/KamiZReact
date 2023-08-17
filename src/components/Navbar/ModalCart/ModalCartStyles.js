@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const ContainerStyle = styled.div`
+export const ContainerStyle = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99;
   width: 100%;
 
   display: flex;
@@ -111,6 +111,12 @@ export const CardTitleStyle = styled.h3`
   margin: 0;
   margin-bottom: 2px;
   font-weight: 500;
+`;
+
+export const TextStyled = styled.p`
+  margin: 0;
+  color: var(--smoke);
+  font-size: 1rem;
 `;
 
 export const PriceStyle = styled.span`

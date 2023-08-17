@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.div`
   width: 100%;
-  max-width: 1600px;
-  padding: 2rem;
   margin: 0 auto;
   h2 {
     font-weight: 400;
@@ -24,9 +22,9 @@ export const ProductsWrapper = styled.section`
   }
 `;
 
-export const ButtonContainerStyle = styled.div`
+export const LoadContainerStyle = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  margin-top: 3rem;
+  margin: 30px;
 `;

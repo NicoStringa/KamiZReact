@@ -10,7 +10,7 @@ export const StyleButton = styled(motion.button)`
   font-weight: 600;
   font-size: 25px;
   cursor: pointer;
-  width: 50px;
+  width: 100%;
   height: 50px;
   align-self: center;
   display: flex;

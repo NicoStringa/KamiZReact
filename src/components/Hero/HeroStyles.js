@@ -5,8 +5,6 @@ export const HeroContainerStyle = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  border: 3px solid var(--rich);
   background: url("/bg1.png") no-repeat;
   background-size: cover;
   width: 100%;
@@ -19,7 +17,6 @@ export const HeroContainerStyle = styled.div`
       1px -1px var(--rich), -1px 1px var(--rich);
   }
   @media (min-width: 1024px) {
-    max-width: 1000px;
     margin: 20px auto;
   }
 `;
@@ -56,4 +53,10 @@ export const HeroImgStyle = styled.div`
   img {
     width: 100%;
   }
+`;
+
+export const HeroBtnContainerStyled = styled.div`
+  align-self: center;
+  width: 100px;
+  border: 1px solid red;
 `;
