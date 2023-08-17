@@ -10,7 +10,7 @@ import {
   TitleStyled,
 } from './CardsMyOrdersStyles';
 
-const CardMisOrdenes = ({ createdAt, status, total, _id, closeup }) => {
+const CardMyOrders = ({ createdAt, status, total, _id, closeup }) => {
   const navigate = useNavigate();
 
   return (
@@ -25,4 +25,4 @@ const CardMisOrdenes = ({ createdAt, status, total, _id, closeup }) => {
   );
 };
 
-export default CardMisOrdenes;
+export default CardMyOrders;
